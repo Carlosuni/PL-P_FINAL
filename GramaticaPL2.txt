@@ -1,0 +1,17 @@
+S ::= A X|D X
+A ::= V = B|V = J|V = K|V = N
+D ::= T V
+B ::= B O E|E
+C ::= % exp
+E ::= V|N
+K ::= B I B|Q !!!!!!!!!!!!!!!
+X ::= Y C|Y
+Y ::= ;
+T ::= REAL|BOOLEAN
+J ::= TRUE|FALSE
+O ::= +|-|*|/
+Q ::= Q AND W | Q OR W | W
+W ::= V|NOT V
+I ::= ==|>=|<=
+V ::= var
+N ::= num
