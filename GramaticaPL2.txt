@@ -5,7 +5,7 @@ R ::= %
 A ::= var = B
 A ::= var = J
 A ::= var = K
-A ::= var = N
+A ::= var = num
 D ::= T var
 X ::= ; %
 X ::= ;
@@ -14,13 +14,12 @@ B ::= E
 K ::= B I B
 K ::= Q 
 E ::= var
-E ::= N
+E ::= num
 Q ::= Q AND W
 Q ::= Q OR W
 Q ::= W
 W ::= var
 W ::= NOT var
-N ::= num
 J ::= TRUE
 J ::= FALSE
 T ::= REAL
