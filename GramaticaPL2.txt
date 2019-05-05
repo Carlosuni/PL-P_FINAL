@@ -1,17 +1,34 @@
-S ::= A X|D X
-A ::= V = B|V = J|V = K|V = N
-D ::= T V
-B ::= B O E|E
-C ::= % exp
-E ::= V|N
-K ::= B I B|Q !!!!!!!!!!!!!!!
-X ::= Y C|Y
-Y ::= ;
-T ::= REAL|BOOLEAN
-J ::= TRUE|FALSE
-O ::= +|-|*|/
-Q ::= Q AND W | Q OR W | W
-W ::= V|NOT V
-I ::= ==|>=|<=
-V ::= var
+S ::= R
+R ::= A X
+R ::= D X
+R ::= %
+A ::= var = B
+A ::= var = J
+A ::= var = K
+A ::= var = N
+D ::= T var
+X ::= ; %
+X ::= ;
+B ::= B O E
+B ::= E
+K ::= B I B
+K ::= Q 
+E ::= var
+E ::= N
+Q ::= Q AND W
+Q ::= Q OR W
+Q ::= W
+W ::= var
+W ::= NOT var
 N ::= num
+J ::= TRUE
+J ::= FALSE
+T ::= REAL
+T ::= BOOLEAN
+O ::= +
+O ::= -
+O ::= *
+O ::= /
+I ::= ==
+I ::= >=
+I ::= <=
