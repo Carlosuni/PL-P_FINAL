@@ -1,33 +1,28 @@
-S ::= R
-R ::= A X
-R ::= D X
-R ::= %
+S ::= S'
+S' ::= A ;
+S' ::= %
 A ::= var = B
-A ::= var = J
-A ::= var = K
-A ::= var = num
-D ::= T var
-X ::= ; %
-X ::= ;
-B ::= B O E
-B ::= E
-K ::= B I B
-K ::= Q 
-E ::= var
-E ::= num
-Q ::= Q AND W
-Q ::= Q OR W
-Q ::= W
-W ::= var
-W ::= NOT var
-J ::= TRUE
-J ::= FALSE
-T ::= REAL
-T ::= BOOLEAN
+A ::= var = B I B
+A ::= var = G
+A ::= E var
+B ::= C B
+B' ::= O B
+B' ::= λ
+C ::= var
+C ::= num
 O ::= +
 O ::= -
 O ::= *
 O ::= /
 I ::= ==
-I ::= >=
 I ::= <=
+I ::= >=
+G ::= D G'
+G' ::= Q G
+G' ::= λ
+D ::= var
+D ::= NOT var
+Q ::= AND
+Q ::= OR
+E ::= REAL
+E ::= BOOLEANO
