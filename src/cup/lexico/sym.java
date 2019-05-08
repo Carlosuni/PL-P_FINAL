@@ -22,6 +22,26 @@ public interface sym {
   public static final int NUMOCTAL = 11;
   public static final int REALNUM = 12;
   public static final int SCIENCNUM = 13;
+  public static final int BOOLWORD = 14;
+  public static final int INF = 15;  
+  public static final int DIV = 16; 
+  public static final int AND = 17;  
+  public static final int OR = 18;  
+  public static final int NOT = 19;  
+  public static final int EQUALTO = 20;  
+  public static final int GREATERTHAN = 21;  
+  public static final int LOWERTHAN = 22;  
+  public static final int ASIGN = 23; 
+  public static final int SI = 24; 
+  public static final int ENTONCES = 25; 
+  public static final int SINO = 26; 
+  public static final int FINSI = 27; 
+  public static final int MIENTRAS = 28; 
+  public static final int FINMIENTRAS = 29; 
+  public static final int REALTYPE = 30;
+  public static final int BOOLEANTYPE = 31; 
+  public static final int COMMA = 32; 
+  public static final int VARIABLE = 33; 
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -36,7 +56,27 @@ public interface sym {
   "PERCCOMM",
   "NUMOCTAL",
   "REALNUM",
-  "SCIENCNUM"
+  "SCIENCNUM",
+  "BOOLWORD",
+  "INF",
+  "DIV",
+  "AND",
+  "OR",
+  "NOT",
+  "EQUALTO",
+  "GREATERTHAN",
+  "LOWERTHAN",
+  "ASIGN",
+  "SI",
+  "ENTONCES",
+  "SINO",
+  "FINSI",
+  "MIENTRAS",
+  "FINMIENTRAS",
+  "REALTYPE",
+  "BOOLEANTYPE",
+  "COMMA",
+  "VARIABLE"
   };
 }
 

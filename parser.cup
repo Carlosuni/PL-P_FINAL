@@ -3,7 +3,7 @@
    parser evaluates constant expressions on the fly
 */
 
-package cup.example;
+package cup.lexico;
 
 import java_cup.runtime.*;
 import cup.example.Lexer;

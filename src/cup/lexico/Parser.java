@@ -6,7 +6,7 @@
 package cup.lexico;
 
 import java_cup.runtime.*;
-import cup.lexico.Lexer;
+import cup.example.Lexer;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;

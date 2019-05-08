@@ -69,11 +69,18 @@ ident = ([:jletter:] | "_" ) ([:jletterdigit:] | [:jletter:] | "_" )*
 /* Comentarios */
 PercenComment = "%" .*
 /* Numeros enteros decimales y octales */
-NumberDec     = [0-9]+
+NumberDec = [0-9]+
 NumOctal = [0-7]+ "o"
 /* Numeros reales simples con coma y con notacion cientifica */
 RealNum = {NumberDec} "." {NumberDec}
 SciencNum = ({NumberDec} | {RealNum}) ([eE]| "e-" | "e+") {NumberDec}
+/* Booleanos */
+BoolWord = "true" | "false"
+/* Variable: Palabras alfanumericas (para nombres variables) */
+Variable = ([a-z] | [A-Z] | [0-9])* ([a-z]) ([a-z] | [A-Z] | [0-9])*
+/* Palabras reservadas (TODO: comprobar su necesidad con implementacion de la gramatica */
+/* RestrictedWord = "TRUE" | "FALSE" | "REAL" | "BOOLEANO" | "SI" | "SINO" | "ENTONCES" | "FINSI" | "AND" | "OR" | "NOT" | "MIENTRAS" | "FINMIENTRAS" */ 
+
 
 %eofval{
     return symbolFactory.newSymbol("EOF",sym.EOF);
@@ -98,6 +105,26 @@ SciencNum = ({NumberDec} | {RealNum}) ([eE]| "e-" | "e+") {NumberDec}
   {NumOctal}     { return symbolFactory.newSymbol("NUMOCTAL", NUMOCTAL); }
   {RealNum}     { return symbolFactory.newSymbol("REALNUM", REALNUM, Double.parseDouble(yytext())); }
   {SciencNum}     { return symbolFactory.newSymbol("SCIENCNUM", SCIENCNUM, Double.parseDouble(yytext())); }
+  {BoolWord}     { return symbolFactory.newSymbol("BOOLWORD", BOOLWORD, Boolean.parseBoolean(yytext())); }
+  "INF"          { return symbolFactory.newSymbol("INF", INF); }
+  "/"          { return symbolFactory.newSymbol("DIV", DIV); }
+  "AND"          { return symbolFactory.newSymbol("AND", AND); }
+  "OR"          { return symbolFactory.newSymbol("OR", OR); }
+  "NOT"          { return symbolFactory.newSymbol("NOT", NOT); }
+  "=="          { return symbolFactory.newSymbol("EQUALTO", EQUALTO); }
+  "<="          { return symbolFactory.newSymbol("GREATERTHAN", GREATERTHAN); }
+  ">="          { return symbolFactory.newSymbol("LOWERTHAN", LOWERTHAN); }
+  "="          { return symbolFactory.newSymbol("ASIGN", ASIGN); }
+  "SI"    { return symbolFactory.newSymbol("SI", SI); }
+  "ENTONCES"    { return symbolFactory.newSymbol("ENTONCES", ENTONCES); }
+  "SINO"    { return symbolFactory.newSymbol("SINO", SINO); }
+  "FINSI"    { return symbolFactory.newSymbol("FINSI", FINSI); }  
+  "MIENTRAS"    { return symbolFactory.newSymbol("MIENTRAS", MIENTRAS); }  
+  "FINMIENTRAS"    { return symbolFactory.newSymbol("FINMIENTRAS", FINMIENTRAS); }
+  "REAL"    { return symbolFactory.newSymbol("REALTYPE", REALTYPE); }
+  "BOOLEANO"    { return symbolFactory.newSymbol("BOOLEANTYPE", BOOLEANTYPE); }
+  ","          { return symbolFactory.newSymbol("COMMA", COMMA); }
+  {Variable}     { return symbolFactory.newSymbol("VARIABLE", VARIABLE, yytext()); }
 }
 
 
