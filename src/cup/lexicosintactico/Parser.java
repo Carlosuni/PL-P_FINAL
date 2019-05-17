@@ -6,7 +6,7 @@
 package cup.lexicosintactico;
 
 import java_cup.runtime.*;
-import cup.example.Lexer;
+import cup.lexicosintactico.Lexer;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
