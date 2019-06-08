@@ -1,0 +1,17 @@
+2.35205e2 + 3;	%comment
+3o + 3;		%comment
+true
+INF
+AND
+OR
+NOT
+==
+<=
+>=
+=
+SI
+MIENTRAS
+REAL
+BOOLEANO
+,
+variable1
